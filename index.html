@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue; 
+            margin: 0; padding: 0;
+            color: darkslategray; 
+        }
+        .overlay {
+            background-color: whitesmoke; 
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
+        h2 {
+            text-align: center;
+            color: purple; 
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid lightgray; 
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus {
+            border-color: mediumslateblue; 
+            outline: none;
+        }
+        button {
+            background-color: mediumslateblue; 
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: indigo; 
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: black; 
+        }
+        .accuracy {
+            margin-top: 8px;
+            text-align: center;
+            color: dimgray; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h2>Diabetes Prediction System</h2>
+            <form method="POST" action="/predict">
+                <input name="preg" type="text" placeholder="Pregnancies" required />
+                <input name="gluc" type="text" placeholder="Glucose" required />
+                <input name="bp" type="text" placeholder="Blood Pressure" required />
+                <input name="skin" type="text" placeholder="Skin Thickness" required />
+                <input name="insulin" type="text" placeholder="Insulin" required />
+                <input name="bmi" type="text" placeholder="BMI" required />
+                <input name="dpf" type="text" placeholder="Diabetes Pedigree Function" required />
+                <input name="age" type="text" placeholder="Age" required />
+                <button type="submit">Predict</button>
+            </form>
+
+            {% if prediction %}
+            <div class="result">Result: {{ prediction }}</div>
+            <div class="accuracy">Model Accuracy: {{ accuracy }}%</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
