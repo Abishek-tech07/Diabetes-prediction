@@ -21,7 +21,7 @@ This project uses a machine learning model trained on the Pima Indian Diabetes d
 
 ## 🖥️ Demo
 
-![Diabetes Prediction UI Screenshot]
+
 
 <img width="887" height="808" alt="image" src="https://github.com/user-attachments/assets/77c7cf5e-d321-46d2-87f3-55ff3efcec8b" />
 
